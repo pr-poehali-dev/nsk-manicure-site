@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 
 const MASTERS = [
@@ -110,6 +111,9 @@ export default function Index() {
             <a href="#gallery" className="hover:text-rose transition-colors">Работы</a>
             <a href="#masters" className="hover:text-rose transition-colors">Мастера</a>
             <a href="#reviews" className="hover:text-rose transition-colors">Отзывы</a>
+            <Link to="/promo" className="flex items-center gap-1 text-rose hover:text-rose-dark transition-colors">
+              <Icon name="Gift" size={14} /> Акции
+            </Link>
             <a href="#booking" className="hover:text-rose transition-colors">Контакты</a>
           </div>
           <a
@@ -129,6 +133,9 @@ export default function Index() {
                 {["Услуги","Работы","Мастера","Отзывы","Контакты"][i]}
               </a>
             ))}
+            <Link to="/promo" onClick={() => setMenuOpen(false)} className="flex items-center gap-1 text-rose">
+              <Icon name="Gift" size={14} /> Акции
+            </Link>
           </div>
         )}
       </nav>
